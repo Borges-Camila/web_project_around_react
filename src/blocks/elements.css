@@ -1,0 +1,114 @@
+.elements {
+  max-width: 880px;
+  margin: 40px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 17px;
+  column-gap: 20px;
+}
+
+.element {
+  max-width: 282px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.element__image {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0px 0px;
+  cursor: pointer;
+}
+
+.element__content {
+  max-width: 282px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 25px 15px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.element__place-name {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29.05px;
+  text-align: left;
+  color: black;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0;
+}
+
+.element__heart {
+  width: 21px;
+  height: 19px;
+  padding: 0;
+  margin-top: 6px;
+}
+
+.element__heart:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.element__heart-active {
+  background-image: url(../images/Coração-Preto.png);
+}
+
+.element__trash {
+  max-width: 18px;
+  position: relative;
+  top: 35px;
+  left: 249px;
+  border: none;
+  background-color: transparent;
+}
+
+.element__trash:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+@media  (min-width: 600px) and (max-width: 900px) {
+  .elements {
+    max-width: 590px;
+    margin: 43px auto 0;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+  .elements {
+    margin: 36px auto 0;
+    max-width: 300px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .element {
+    width: 300px;
+    height: 381px;
+  }
+
+  .element__image {
+    width: 282px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 320px) {
+  .elements {
+    margin-top: 36px;
+    max-width: 282px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+}

@@ -1,0 +1,49 @@
+.header {
+  margin: 45px auto 0;
+  max-width: 880px;
+}
+
+.header__logo {
+  width: 173px;
+  display: flex;
+}
+
+hr {
+  border-color: #545454;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 41px;
+}
+
+@media (min-width: 580px) and (max-width: 900px) {
+  .header {
+    max-width: 800px;
+    margin-top: 36px;
+  }
+  .header__logo {
+    width: 147px;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 580px) {
+  .header {
+    max-width: 500px;
+    margin-top: 36px;
+  }
+  .header__logo {
+    width: 136px;
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    width: 100%;
+    margin-top: 28px;
+  }
+  .header__logo {
+    width: 126px;
+    margin-left: 27px;
+  }
+}
