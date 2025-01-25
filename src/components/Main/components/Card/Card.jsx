@@ -1,13 +1,16 @@
 import binButton from "../../../../images/Trash.png";
 import heartButton from "../../../../images/Coração.svg";
 
-export default function Card({ card, handleDeleteCard, openPopup }) {
+import ImagePopup from "../Popup/components/BigImage/imagePopup";
+
+export default function Card({ card, handleDeleteCard, handleOpenPopup }) {
+  const imageComponent = {
+    title: "",
+    children: <ImagePopup card={card} />,
+  };
+
   function deleteCard() {
     handleDeleteCard(card);
-  }
-
-  function openBigImage() {
-    openPopup(card);
   }
 
   return (
@@ -23,7 +26,7 @@ export default function Card({ card, handleDeleteCard, openPopup }) {
         src={card.link}
         alt=""
         className="element__image"
-        onClick={openPopup}
+        onClick={() => handleOpenPopup(imageComponent)}
       />
 
       <div className="element__content">

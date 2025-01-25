@@ -9,7 +9,7 @@ import EditProfile from "./components/Popup/components/EditProfile/EditProfile";
 import EditAvatar from "./components/Popup/components/EditAvatar/EditAvatar";
 import Card from "./components/Card/Card";
 
-function Main({ cards, handleDeleteCard, openPopup }) {
+function Main({ cards, handleDeleteCard }) {
   const [popup, setPopup] = useState(null);
   const newCardPopup = {
     title: "Novo Local",
@@ -88,7 +88,7 @@ function Main({ cards, handleDeleteCard, openPopup }) {
             card={item}
             key={index}
             handleDeleteCard={handleDeleteCard}
-            openPopup={openPopup}
+            handleOpenPopup={handleOpenPopup}
           />
         ))}
       </div>

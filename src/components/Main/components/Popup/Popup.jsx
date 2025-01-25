@@ -5,7 +5,7 @@ export default function Popup(props) {
   const { onClose, title, children } = props;
   return (
     <div className="popup" id="editProfileImg">
-      <div className="popup__form popup__form-avatar" id="profileImg-form">
+      <div className="popup__form" id="profileImg-form">
         <button
           type="button"
           className="popup__close-button"
@@ -14,8 +14,12 @@ export default function Popup(props) {
         >
           <img src={closeButton} alt="Close icon X" />
         </button>
-        <div className="popup__form-content">
-          <h3 className="popup__form-title">{title}</h3>
+        <div
+          className={`popup__content ${
+            !title ? "popup__form-content_content_image" : ""
+          }`}
+        >
+          {title && <h3 className="popup__form-title">{title}</h3>}
           {children}
         </div>
       </div>
