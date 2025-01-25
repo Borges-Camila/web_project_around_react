@@ -9,9 +9,12 @@ import EditProfile from "./components/Popup/components/EditProfile/EditProfile";
 import EditAvatar from "./components/Popup/components/EditAvatar/EditAvatar";
 import Card from "./components/Card/Card";
 
-function Main() {
+function Main({ cards, handleDeleteCard, openPopup }) {
   const [popup, setPopup] = useState(null);
-  const newCardPopup = { title: "Novo Local", children: <NewCard /> };
+  const newCardPopup = {
+    title: "Novo Local",
+    children: <NewCard />,
+  };
   const editProfilePopup = {
     title: "Editar perfil",
     children: <EditProfile />,
@@ -79,7 +82,16 @@ function Main() {
         </Popup>
       )}
 
-      <div className="elements"></div>
+      <div className="elements">
+        {cards.map((item, index) => (
+          <Card
+            card={item}
+            key={index}
+            handleDeleteCard={handleDeleteCard}
+            openPopup={openPopup}
+          />
+        ))}
+      </div>
     </>
   );
 }
