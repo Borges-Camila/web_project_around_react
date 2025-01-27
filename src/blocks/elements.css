@@ -75,7 +75,7 @@
   opacity: 0.7;
 }
 
-@media  (min-width: 600px) and (max-width: 900px) {
+@media (min-width: 600px) and (max-width: 900px) {
   .elements {
     max-width: 590px;
     margin: 43px auto 0;
