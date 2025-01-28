@@ -6,6 +6,13 @@ import ImagePopup from "../Popup/components/BigImage/imagePopup";
 export default function Card(props) {
   const { name, link, isLiked } = props.card;
 
+  const { handleOpenPopup } = props;
+
+  const imageComponent = {
+    title: "",
+    children: <ImagePopup card={props.card} />,
+  };
+
   return (
     <li className="element">
       <img

@@ -94,16 +94,16 @@ function Main() {
           </button>
         </div>
       </section>
-
-      {popup && (
-        <Popup onClose={handleClosePopup} title={popup.title}>
-          {popup.children}
-        </Popup>
-      )}
-
+      <div className="janela-popup">
+        {popup && (
+          <Popup onClose={handleClosePopup} title={popup.title}>
+            {popup.children}
+          </Popup>
+        )}
+      </div>
       <ul className="elements">
         {cards.map((card) => (
-          <Card key={card._id} card={card} />
+          <Card key={card._id} card={card} handleOpenPopup={handleOpenPopup} />
         ))}
       </ul>
     </>

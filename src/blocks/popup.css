@@ -1,8 +1,15 @@
+.janela-popup {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .popup {
-  z-index: 4;
-  position: absolute;
+  position: fixed;
+  z-index: 999;
   top: 195px;
-  left: 400px;
 }
 
 .popup__close-button {
@@ -164,25 +171,9 @@
   cursor: not-allowed;
 }
 
-@media (max-width: 1190px) {
-  .popup {
-    left: 335px;
-  }
-}
-
-@media (max-width: 1100px) {
-  .popup {
-    left: 285px;
-  }
-}
-
 @media (max-width: 900px) {
   .popup__image-button {
     left: 617px;
-  }
-
-  .popup {
-    left: 235px;
   }
 
   .popup__content {
@@ -192,32 +183,15 @@
 }
 
 @media (max-width: 800px) {
-  .popup {
-    left: 180px;
-  }
-
   .popup__content {
     max-width: 470px;
   }
-}
-
-@media (max-width: 700px) {
-  .popup {
-    left: 130px;
-  }
-}
-
-@media (max-width: 600px) {
-  .popup {
-    left: 90px;
+  .popup__form-title {
+    margin-bottom: 25px;
   }
 }
 
 @media (max-width: 500px) {
-  .popup {
-    left: 85px;
-  }
-
   .popup__close-button {
     width: 26px;
     height: 26px;
@@ -253,10 +227,6 @@
 }
 
 @media (max-width: 400px) {
-  .popup {
-    left: 45px;
-  }
-
   .popup__content {
     max-width: 320px;
     max-height: 215px;
@@ -282,7 +252,6 @@
 @media (max-width: 320px) {
   .popup {
     top: 300px;
-    left: 16px;
   }
 
   .popup__close-button {
