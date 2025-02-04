@@ -7,6 +7,8 @@ class Api {
   getUsersInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
       headers: this._headers,
+    }).then((res) => {
+      return res.json();
     });
   }
 

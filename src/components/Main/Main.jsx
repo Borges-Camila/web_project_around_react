@@ -1,14 +1,16 @@
+import { useContext, useEffect, useState } from "react";
+
 import profileAvatar from "../../images/Avatar.png";
 import profileEditButton from "../../images/Edit-Button.png";
 import profileAddButton from "../../images/Add-Button.png";
 
-import { useEffect, useState } from "react";
 import NewCard from "./components/Popup/components/NewCard/NewCard";
 import Popup from "./components/Popup/Popup";
 import EditProfile from "./components/Popup/components/EditProfile/EditProfile";
 import EditAvatar from "./components/Popup/components/EditAvatar/EditAvatar";
 import Card from "./components/Card/Card";
 import api from "../../utils/api";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function Main() {
   const [popup, setPopup] = useState(null);
@@ -25,6 +27,11 @@ function Main() {
     children: <EditAvatar />,
   };
 
+  const [cards, setCards] = useState([]); //variável de estado para cards
+
+  const currentUser = useContext(CurrentUserContext);
+  console.log(currentUser);
+
   function handleOpenPopup(popup) {
     setPopup(popup);
   }
@@ -32,7 +39,6 @@ function Main() {
   function handleClosePopup() {
     setPopup(null);
   }
-  const [cards, setCards] = useState([]); //variável de estado para cards
 
   useEffect(() => {
     api
@@ -55,14 +61,14 @@ function Main() {
           onClick={() => handleOpenPopup(editAvatarPopup)}
         >
           <img
-            src={profileAvatar}
+            src={currentUser.avatar}
             className="profile__avatar"
             alt="Fotografia de um senhor de cabelos brancos, usando uma touca de cor vermelho vibrante e um camisa azul claro."
           />
         </button>
         <div className="profile__info">
           <div className="profile__title-edit">
-            <h1 className="profile__title">Jacques Cousteau</h1>
+            <h1 className="profile__title">{currentUser.name}</h1>
             <button
               type="button"
               className="profile__edit-button"
@@ -72,7 +78,7 @@ function Main() {
             </button>
           </div>
           <div className="profile__subtitle">
-            <h2 className="profile__subtitle-text">Explorador</h2>
+            <h2 className="profile__subtitle-text">{currentUser.about}</h2>
           </div>
         </div>
         <div>
