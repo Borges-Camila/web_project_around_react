@@ -59,6 +59,11 @@
 
 .element__heart-active {
   background-image: url(../images/Coração-Preto.png);
+  background-repeat: no-repeat;
+  width: 21px;
+  height: 19px;
+  margin-top: 6px;
+  background-position: center;
 }
 
 .element__trash {

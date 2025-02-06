@@ -7,8 +7,6 @@ class Api {
   getUsersInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
       headers: this._headers,
-    }).then((res) => {
-      return res.json();
     });
   }
 
@@ -40,6 +38,13 @@ class Api {
   deleteCard(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}`, {
       method: "DELETE",
+      headers: this._headers,
+    });
+  }
+
+  changeLikeCardStatus(cardId, isLiked) {
+    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
+      method: isLiked === false ? "PUT" : "DELETE",
       headers: this._headers,
     });
   }
